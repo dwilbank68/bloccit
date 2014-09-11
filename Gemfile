@@ -49,3 +49,4 @@ gem 'bootstrap-sass', '~> 3.1.1'
 # gem 'debugger', group: [:development, :test]
 
 gem 'faker'
+gem 'devise'
