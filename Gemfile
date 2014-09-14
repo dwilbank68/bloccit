@@ -52,3 +52,4 @@ gem 'faker'
 gem 'devise'
 gem 'figaro'
 gem 'tzinfo-data', platforms: [:mingw, :mswin]
+gem 'pundit'
