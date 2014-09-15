@@ -83,8 +83,8 @@
       <file leaf-file-name="_form.html.erb" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/views/posts/_form.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.5887324" vertical-offset="0" max-vertical-offset="710">
-              <caret line="19" column="88" selection-start-line="19" selection-start-column="88" selection-end-line="19" selection-end-column="88" />
+            <state vertical-scroll-proportion="0.743662" vertical-offset="0" max-vertical-offset="710">
+              <caret line="24" column="7" selection-start-line="24" selection-start-column="7" selection-end-line="24" selection-end-column="7" />
               <folding />
             </state>
           </provider>
@@ -1227,8 +1227,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/posts/_form.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5887324" vertical-offset="0" max-vertical-offset="710">
-          <caret line="19" column="88" selection-start-line="19" selection-start-column="88" selection-end-line="19" selection-end-column="88" />
+        <state vertical-scroll-proportion="0.743662" vertical-offset="0" max-vertical-offset="710">
+          <caret line="24" column="7" selection-start-line="24" selection-start-column="7" selection-end-line="24" selection-end-column="7" />
           <folding />
         </state>
       </provider>
