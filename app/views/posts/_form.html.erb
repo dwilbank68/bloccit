@@ -12,12 +12,16 @@
     <% end %>
 
 
+    <div class="<%= errors?(post.errors[:title]) %>">
+        <%= f.label :title %>
+        <%= f.text_field :title, class: 'form-control', placeholder: "Enter post title" %>
+    </div>
+    <div class="<%= errors?(post.errors[:body]) %>">
+      <%= f.label :body %>
+      <%= f.text_area :body, rows: 8, class: 'form-control', placeholder: "Enter post body" %>
+    </div>
 
-    <%= f.label :title %>
-    <%= f.text_field :title, class: "form-control #{errors?(post.errors[:title])}", placeholder: "Enter post title" %>
 
-    <%= f.label :body %>
-    <%= f.text_area :body, rows: 8, class: "form-control #{errors?(post.errors[:body])}", placeholder: "Enter post body" %>
 
     <div class="form-group">
       <%= f.submit "Save", class: 'btn btn-success' %>
