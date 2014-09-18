@@ -54,3 +54,6 @@ gem 'figaro'
 gem 'tzinfo-data', platforms: [:mingw, :mswin]
 gem 'pundit'
 gem 'redcarpet'
+gem 'carrierwave'
+gem 'mini_magick'
+gem 'fog'
