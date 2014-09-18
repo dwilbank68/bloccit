@@ -11,21 +11,25 @@ require 'faker'
 end
 users = User.all
 
+topic_num = 1
 150.times do
   Topic.create(
-      name:       Faker::Lorem.sentence,
+      name:       "Topic " + topic_num.to_s + " " + Faker::Lorem.sentence,
       description:Faker::Lorem.paragraph,
   )
+  topic_num += 1
 end
 topics = Topic.all
 
+post_num = 1
 500.times do
   Post.create!(
     user: users.sample,
     topic: topics.sample,
-    title: Faker::Lorem.sentence,
+    title: "Post " + post_num.to_s + " " + Faker::Lorem.sentence,
     body: Faker::Lorem.paragraph
     )
+  post_num += 1
 end
 posts = Post.all
 
