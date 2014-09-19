@@ -1,5 +1,5 @@
-<h3>New Comment Form Here</h3>
-<%= form_for [topic, post, comment] do |f|%>
+<h5>New Comment</h5>
+<%= form_for [post, comment] do |f|%>
 
     <% if post.errors.any? %>
         <div class="alert alert-danger">
@@ -13,8 +13,8 @@
     <% end %>
 
     <div class="<%= errors?(comment.errors[:body]) %>">
-      <%= f.label :body %>
-      <%= f.text_area :body, rows: 8, class: 'form-control', placeholder: "Enter post body" %>
+
+      <%= f.text_area :body, class: 'form-control', placeholder: "Enter post body" %>
     </div>
 
 
