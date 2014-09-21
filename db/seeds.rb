@@ -23,12 +23,16 @@ topics = Topic.all
 
 post_num = 1
 500.times do
-  Post.create!(
+  post = Post.create!(
     user: users.sample,
     topic: topics.sample,
     title: "Post " + post_num.to_s + " " + Faker::Lorem.sentence,
     body: Faker::Lorem.paragraph
     )
+
+    post.update_attributes!(created_at: rand(10.minutes .. 1.year).ago)
+    post.update_rank
+
   post_num += 1
 end
 posts = Post.all

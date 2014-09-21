@@ -4,34 +4,20 @@ describe Vote do
 
   describe "validations" do
 
-    before do
-      @post = Post.create(title: 'post title', body: 'post body')
-    end
-
     describe 'value validation' do
       it "only allows -1 or 1 as values" do
 
-        it "allows 1" do
-          @post.votes.create(value: 1)
-          expect (@post.votes).to eq(1)
-        end
+        vgood1 = Vote.create :value => 1
+        vgood2 = Vote.create :value => -1
+        vbad1 = Vote.create :value => 0
+        vbad2 = Vote.create :value => 2
+        vbad3 = Vote.create
+        expect(vgood1.valid?).to eq(true)#eq(true)
+        expect(vgood2.valid?).to eq(true)
+        expect(vbad1.valid?).to eq(false)
+        expect(vbad2.valid?).to eq(false)
+        expect(vbad3.valid?).to eq(false)
 
-        it "allows -1" do
-          @post.votes.create(value: -1)
-          expect (@post.votes).to eq(-1)
-        end
-
-        it "disallows 2" do
-          @post.votes.create(value: 2)
-          expect (@post.votes).not_to eq(2)
-        end
-
-        it "disallows 0" do
-          @post.votes.create(value: 0)
-          expect (@post.votes).not_to eq(0)
-        end
-
-        # can't really write a test for nil until I see how model works and if it would crash the app
       end
     end
 
