@@ -7,10 +7,10 @@ class User < ActiveRecord::Base
   has_many :comments, dependent: :destroy
   has_many :votes,    dependent: :destroy
   mount_uploader :avatar, AvatarUploader
-end
 
-def role?(base_role)
-  puts "base_role.to_s is #{base_role.to_s}"
-  puts "user.role is #{user.role}"
-  user.role == base_role.to_s
-end
+  def role?(base_role)
+    puts "base_role.to_s is #{base_role.to_s}"
+    puts "user.role is #{user.role}"
+    user.role == base_role.to_s
+  end
+ end

@@ -42,7 +42,5 @@ class Post < ActiveRecord::Base
   def create_vote
     user.votes.create(post: self, value: 1)
   end
-
-
 end
 

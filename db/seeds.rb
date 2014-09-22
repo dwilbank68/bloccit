@@ -15,7 +15,7 @@ topic_num = 1
 150.times do
   Topic.create(
       name:       "Topic " + topic_num.to_s + " " + Faker::Lorem.sentence,
-      description:Faker::Lorem.paragraph,
+      description: Faker::Lorem.paragraph,
   )
   topic_num += 1
 end
@@ -24,16 +24,15 @@ topics = Topic.all
 post_num = 1
 500.times do
   post = Post.create!(
-    user: users.sample,
-    topic: topics.sample,
-    title: "Post " + post_num.to_s + " " + Faker::Lorem.sentence,
-    body: Faker::Lorem.paragraph
+      user: users.sample,
+      topic: topics.sample,
+      title: "Post " + post_num.to_s + " " + Faker::Lorem.sentence,
+      body: Faker::Lorem.paragraph
     )
 
     post.update_attributes!(created_at: rand(10.minutes .. 1.year).ago)
     post.update_rank
-
-  post_num += 1
+    post_num += 1
 end
 posts = Post.all
 
