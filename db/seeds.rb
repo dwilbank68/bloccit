@@ -22,7 +22,7 @@ end
 topics = Topic.all
 
 post_num = 1
-500.times do
+250.times do
   post = Post.create!(
       user: users.sample,
       topic: topics.sample,
@@ -31,12 +31,13 @@ post_num = 1
     )
 
     post.update_attributes!(created_at: rand(10.minutes .. 1.year).ago)
+    post.create_vote
     post.update_rank
     post_num += 1
 end
 posts = Post.all
 
-1000.times do
+500.times do
   Comment.create!(
     post: posts.sample,
     body: Faker::Lorem.paragraph,

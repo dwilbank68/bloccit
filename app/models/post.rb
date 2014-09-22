@@ -8,12 +8,9 @@ class Post < ActiveRecord::Base
 
   validates :title, length: {minimum: 5}, presence: true
   validates :body, length: {minimum: 20}, presence: true
-  # validates :topic, presence: true
-  # validates :user, presence: true
+  validates :topic, presence: true
+  validates :user, presence: true
 
-  validates :value, inclusion: { in: [-1,1], message: "%{value is not a valid vote."}
-
-  after_create :create_vote
 
   mount_uploader :image, ImageUploader
 
@@ -37,7 +34,6 @@ class Post < ActiveRecord::Base
   end
 
 
-  private #############################################
 
   def create_vote
     user.votes.create(post: self, value: 1)
