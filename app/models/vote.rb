@@ -4,6 +4,8 @@ class Vote < ActiveRecord::Base
 
   validates :value, inclusion: { in: [-1,1], message: "%{value is not a valid vote."}
 
+    # post = Vote.post
+
   after_save :update_post
 
   private #############################################
