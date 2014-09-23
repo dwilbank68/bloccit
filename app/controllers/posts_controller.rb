@@ -19,8 +19,8 @@ class PostsController < ApplicationController
     @post = current_user.posts.build(post_params)
     @post.topic = @topic
     authorize @post
-    if @post.save
-      @post.create_vote
+
+    if @post.save_with_initial_vote
       flash[:notice] = "Post was saved."
       redirect_to [@topic, @post]
     else
@@ -68,5 +68,12 @@ class PostsController < ApplicationController
   def post_params
     params.require(:post).permit(:title, :body, :image)
   end
+
+  # def save_with_initial_vote(the_post)
+  #   ActiveRecord::Base.transaction do
+  #     the_post.save
+  #     the_post.create_vote
+  #   end
+  # end
 
 end
