@@ -82,16 +82,16 @@ RSpec.configure do |config|
   # as the one that triggered the failure.
   Kernel.srand config.seed
 =end
-  config.before(:suite) do
-    if RUBY_PLATFORM =~ /darwin/
-      # Focus on Terminal
-      system %{osascript -e 'tell application "Terminal" to activate'}
-      # Send CMD+K to clear
-      system %{osascript -e 'if application "Terminal" is frontmost then tell application "System Events" to keystroke "k" using command down'}
-      # CMD-TAB to return focus to previous application
-      system %{osascript -e 'tell application "System Events" to keystroke tab using command down'}
-    end
-  end
+  # config.before(:suite) do
+  #   if RUBY_PLATFORM =~ /darwin/
+  #     # Focus on Terminal
+  #     system %{osascript -e 'tell application "Terminal" to activate'}
+  #     # Send CMD+K to clear
+  #     system %{osascript -e 'if application "Terminal" is frontmost then tell application "System Events" to keystroke "k" using command down'}
+  #     # CMD-TAB to return focus to previous application
+  #     system %{osascript -e 'tell application "System Events" to keystroke tab using command down'}
+  #   end
+  # end
 
 
 end
