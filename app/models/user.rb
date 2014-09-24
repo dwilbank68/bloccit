@@ -6,11 +6,15 @@ class User < ActiveRecord::Base
   has_many :posts,    dependent: :destroy
   has_many :comments, dependent: :destroy
   has_many :votes,    dependent: :destroy
+  has_many :favorites,    dependent: :destroy
   mount_uploader :avatar, AvatarUploader
 
-  def role?(base_role)
-    puts "base_role.to_s is #{base_role.to_s}"
-    puts "user.role is #{user.role}"
+  def role?(base_role) # not in use - debug one day
     user.role == base_role.to_s
   end
+
+  def favorited(post)
+    favorites.where(post_id: post.id).first
+  end
+
  end
