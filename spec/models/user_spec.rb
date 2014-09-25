@@ -6,12 +6,18 @@ describe User do
 
   describe '#favorited(post)' do
 
-    xit "returns 'nil' if user has not favorited the post" do
-
+    before do
+      @post = associated_post
+      @user = authenticated_user
     end
 
-    xit "returns appropriate favorite if it exists" do
+    it "returns 'nil' if user has not favorited the post" do
+      @user.favorited(@post)
+    end
 
+    it "returns appropriate favorite if it exists" do
+      @user.favorites.where(post: @post).create
+      @user.favorited(@post)
     end
 
   end

@@ -9,7 +9,8 @@ describe Comment do
     before do
       @post = associated_post
       @user = authenticated_user
-      @comment = Comment.new(body: "My comment", post: @post, user_id: 10000)
+      # @comment = Comment.new(body: "My comment", post: @post, user_id: 10000)
+      @comment = Comment.new(body: "My comment", post: @post, user_id: @user.id)
     end
 
     it "sends email to users who have favorited the post" do
@@ -29,8 +30,5 @@ describe Comment do
 
       @comment.save
     end
-
   end
-
-
 end
