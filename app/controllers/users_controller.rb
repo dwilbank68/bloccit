@@ -13,7 +13,7 @@ class UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:name, :avatar)
-  end
+    params.require(:user).permit(:name, :avatar, :email_favorites)  # email_favorites will come in as 0 or 1, then
+  end                                                               # be converted to boolean
 
 end

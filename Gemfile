@@ -10,13 +10,19 @@ group :production do
     gem 'rails_12factor'
 end
 
+group :development, :test do
+  gem 'rspec-rails', '~> 3.1.0'
+  gem 'capybara'
+  gem 'selenium-webdriver'
+end
+
 group :development do
   gem 'sqlite3'
 end
 
-group :test do
-  gem 'rspec-rails', '~> 3.1.0'
-end
+# group :test do
+#   gem 'rspec-rails', '~> 3.1.0'
+# end
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.3'
@@ -62,3 +68,6 @@ gem 'carrierwave'
 gem 'mini_magick'
 gem 'fog'
 gem 'will_paginate', '~> 3.0.5'
+gem 'database_cleaner'
+gem 'hirb'
+gem 'awesome_print', :require => 'ap'
