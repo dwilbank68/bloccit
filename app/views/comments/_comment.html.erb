@@ -1,4 +1,4 @@
-
+<!--from app/views/topics/posts/show.html.erb:17:in `_app_views_topics_posts_show_html_erb___2191040622763096952_70150016953840'-->
 
   <%= content_tag :div, class: 'media', id: "comment-#{comment.id}" do %>
       <% link_to '#', class: 'pull-left' do %>
@@ -8,7 +8,7 @@
         <small>
           <%= comment.user.name %> commented <%= time_ago_in_words(comment.created_at) %> ago
           <% if policy(comment).destroy? %>
-            | <%= link_to "Delete", [comment.post,comment], method: :delete %>
+            | <%= link_to "Delete", [comment.post.topic, comment.post, comment], method: :delete %>
           <% end %>
         </small>
         <p><%= comment.body %></p>
