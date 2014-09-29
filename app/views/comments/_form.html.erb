@@ -1,5 +1,5 @@
 <h5>New Comment</h5>
-<%= form_for [post, comment] do |f|%>
+<%= form_for [topic, post, comment] do |f|%>
 
     <% if post.errors.any? %>
         <div class="alert alert-danger">

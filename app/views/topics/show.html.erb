@@ -1,3 +1,10 @@
+<!--def show-->
+    <!--@topic = Topic.find(params[:id])-->
+    <!--authorize @topic-->
+    <!--@posts = @topic.posts.includes(:user).includes(:comment).paginate(page: params[:page], per_page: 10)-->
+<!--end-->
+
+
 <h1><%= @topic.name %></h1>
 
 <% if policy(@topic).update? %>
@@ -7,9 +14,8 @@
 <div class="row">
   <div class="col-md-8">
     <p class="lead"><%= @topic.description %></p>
-    <% @posts.each do |post| %>
-        <%= render @posts %>
-    <% end %>
+    <%= render @posts %> <!-- posts/_post.html.erb -->
+    <%= will_paginate @posts %>
   </div>
   <div class="col-md-4">
 
