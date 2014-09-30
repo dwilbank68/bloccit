@@ -5,11 +5,10 @@ Warden.test_mode!
 
 describe 'Visiting user profiles' do
 
-  include TestFactories
-
   before do
-    @user = authenticated_user
-    @post = associated_post(user: @user)
+    @user = create(:user)
+    @post = create(:post, user:@user)
+
     @comment = Comment.new(user: @user, body: 'A Comment')
     allow(@comment).to receive(:send_favorite_emails) # skipping an actual call to :send_favorite_emails?
     @comment.save
@@ -28,11 +27,11 @@ describe 'Visiting user profiles' do
 
   describe "signed in" do
     before do
-      @user = authenticated_user
+      @user = create(:user)
       @user.confirmed_at = Time.now
       @user.save
       login_as(@user, :scope => :user) # from Warden::Test::Helpers
-      @post = associated_post(user: @user)
+      @post = create(:post, user:@user)
 
       @comment = Comment.new(user: @user, body: 'A Comment')
       allow(@comment).to receive(:send_favorite_emails) # skipping an actual call to :send_favorite_emails?
