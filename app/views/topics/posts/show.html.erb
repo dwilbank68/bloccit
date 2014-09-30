@@ -14,10 +14,16 @@
     <p><%= markdown @post.body %></p>
 
     <h3>Comments</h3>
-    <%= render partial: "comments/comment", collection: @comments %>
+
+    <div class="js-comments">
+      <%= render partial: "comments/comment", collection: @comments %>
+    </div>
+
 
     <% if current_user %>
-        <%= render partial: 'comments/form', locals: { topic:@topic, post:@post, comment:@comment} %>
+        <div class="new-comment">
+          <%= render partial: 'comments/form', locals: { topic:@topic, post:@post, comment:@comment} %>
+        </div>
     <% end %>
 
 
